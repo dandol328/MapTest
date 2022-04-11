@@ -16,7 +16,7 @@ struct City: Identifiable {
 
 struct ContentView: View {
     @StateObject var locationManager = LocationManager()
-    
+    var mapView = MapView()
     let annotations = [
         City(name: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)),
         City(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508)),
@@ -27,19 +27,7 @@ struct ContentView: View {
 
     
     var body: some View {
-        Map(coordinateRegion: $locationManager.region, interactionModes: .all, showsUserLocation: true, annotationItems: annotations) {
-            MapMarker(coordinate: $0.coordinate)
-        }
-            .ignoresSafeArea()
-            .accentColor(Color(.systemRed))
-            .onAppear {
-                locationManager.checkIfLocationServicesIsEnabled()
-            }
-        Text("Latitude: \(locationManager.fixedRegion.center.latitude)")
-        Text("Longitude: \(locationManager.fixedRegion.center.longitude)")
-        Text(locationManager.latString)
-        Text(locationManager.longString)
-
+        mapView.body
     }
 }
 

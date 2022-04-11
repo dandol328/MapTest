@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		379AE3272804056900C6D89A /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379AE3262804056900C6D89A /* MapView.swift */; };
 		37C721A72802A7E0008C5F44 /* MapTestApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C721A62802A7E0008C5F44 /* MapTestApp.swift */; };
 		37C721A92802A7E0008C5F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C721A82802A7E0008C5F44 /* ContentView.swift */; };
 		37C721AB2802A7E4008C5F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C721AA2802A7E4008C5F44 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		379AE3262804056900C6D89A /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		37C721A32802A7E0008C5F44 /* MapTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		37C721A62802A7E0008C5F44 /* MapTestApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTestApp.swift; sourceTree = "<group>"; };
 		37C721A82802A7E0008C5F44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				37C721A62802A7E0008C5F44 /* MapTestApp.swift */,
 				37C721A82802A7E0008C5F44 /* ContentView.swift */,
+				379AE3262804056900C6D89A /* MapView.swift */,
 				37C721B42802A7F1008C5F44 /* LocationManager.swift */,
 				37C721AA2802A7E4008C5F44 /* Assets.xcassets */,
 				37C721AC2802A7E4008C5F44 /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				37C721A92802A7E0008C5F44 /* ContentView.swift in Sources */,
+				379AE3272804056900C6D89A /* MapView.swift in Sources */,
 				37C721A72802A7E0008C5F44 /* MapTestApp.swift in Sources */,
 				37C721B52802A7F1008C5F44 /* LocationManager.swift in Sources */,
 			);
