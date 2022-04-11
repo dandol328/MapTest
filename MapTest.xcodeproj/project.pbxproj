@@ -11,6 +11,7 @@
 		37C721A92802A7E0008C5F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C721A82802A7E0008C5F44 /* ContentView.swift */; };
 		37C721AB2802A7E4008C5F44 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C721AA2802A7E4008C5F44 /* Assets.xcassets */; };
 		37C721AE2802A7E4008C5F44 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 37C721AD2802A7E4008C5F44 /* Preview Assets.xcassets */; };
+		37C721B52802A7F1008C5F44 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C721B42802A7F1008C5F44 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		37C721A82802A7E0008C5F44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		37C721AA2802A7E4008C5F44 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		37C721AD2802A7E4008C5F44 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		37C721B42802A7F1008C5F44 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				37C721A62802A7E0008C5F44 /* MapTestApp.swift */,
 				37C721A82802A7E0008C5F44 /* ContentView.swift */,
+				37C721B42802A7F1008C5F44 /* LocationManager.swift */,
 				37C721AA2802A7E4008C5F44 /* Assets.xcassets */,
 				37C721AC2802A7E4008C5F44 /* Preview Content */,
 			);
@@ -139,6 +142,7 @@
 			files = (
 				37C721A92802A7E0008C5F44 /* ContentView.swift in Sources */,
 				37C721A72802A7E0008C5F44 /* MapTestApp.swift in Sources */,
+				37C721B52802A7F1008C5F44 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +274,10 @@
 				DEVELOPMENT_TEAM = 93U58GM5Z5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -299,6 +307,10 @@
 				DEVELOPMENT_TEAM = 93U58GM5Z5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "";
+				INFOPLIST_KEY_NSLocationUsageDescription = "";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

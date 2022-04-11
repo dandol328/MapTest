@@ -6,16 +6,45 @@
 //
 
 import SwiftUI
+import MapKit
+
+struct City: Identifiable {
+    let id = UUID()
+    let name: String
+    let coordinate: CLLocationCoordinate2D
+}
 
 struct ContentView: View {
+    @StateObject var locationManager = LocationManager()
+    
+    let annotations = [
+        City(name: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275)),
+        City(name: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508)),
+        City(name: "Rome", coordinate: CLLocationCoordinate2D(latitude: 41.9, longitude: 12.5)),
+        City(name: "Washington DC", coordinate: CLLocationCoordinate2D(latitude: 38.895111, longitude: -77.036667)),
+        City(name: "Bispo", coordinate: CLLocationCoordinate2D(latitude: 35.23825, longitude: -120.63791))
+    ]
+
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Map(coordinateRegion: $locationManager.region, interactionModes: .all, showsUserLocation: true, annotationItems: annotations) {
+            MapMarker(coordinate: $0.coordinate)
+        }
+            .ignoresSafeArea()
+            .accentColor(Color(.systemRed))
+            .onAppear {
+                locationManager.checkIfLocationServicesIsEnabled()
+            }
+        Text("Latitude: \(locationManager.fixedRegion.center.latitude)")
+        Text("Longitude: \(locationManager.fixedRegion.center.longitude)")
+        Text(locationManager.latString)
+        Text(locationManager.longString)
+
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(locationManager: LocationManager())
     }
 }
