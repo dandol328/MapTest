@@ -36,6 +36,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
             locationManager?.desiredAccuracy = kCLLocationAccuracyBestForNavigation
             locationManager!.delegate = self
             locationManager?.startUpdatingLocation()
+            print("Starting to update location services")
         } else {
             print("Fail something")
         }
