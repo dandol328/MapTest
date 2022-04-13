@@ -10,8 +10,8 @@ import MapKit
 import Combine
 
 class MapViewFixedLocationInput: ObservableObject {
-    @Published var latitude = "1.0"
-    @Published var longitude = "2.0"
+    @Published var latitude = 1.0
+    @Published var longitude = 1.0
 }
 
 
