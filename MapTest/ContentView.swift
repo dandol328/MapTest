@@ -17,17 +17,35 @@ struct City: Identifiable {
 struct ContentView: View {
     @ObservedObject var locationManager = LocationManager()
     @State var mapView = MapView()
-    
+    @StateObject var mapViewFixedLocationInput = MapViewFixedLocationInput()
+
     var body: some View {
         mapView.body
             .onAppear() {
                 locationManager.checkIfLocationServicesIsEnabled()
             }
-//        Text(locationManager.latString)
-//        Text(locationManager.longString)
-//            .onAppear() {
-//                locationManager.checkIfLocationServicesIsEnabled()
-//            }
+        NavigationView {
+            VStack {
+                // A button that writes to the environment settings
+                Button("Change Latitude") {
+                    mapViewFixedLocationInput.latitude = "3.5"
+                }
+                
+                Text("The thing is: \(mapViewFixedLocationInput.latitude)")
+                    
+                NavigationLink(destination: MapViewFixed()) {
+                    Text("Show Detail View")
+                }
+                
+                Text(locationManager.latString)
+                Text(locationManager.longString)
+                    .onAppear() {
+                        locationManager.checkIfLocationServicesIsEnabled()
+                    }
+
+            }
+        }
+        .environmentObject(mapViewFixedLocationInput)
     }
 }
 
