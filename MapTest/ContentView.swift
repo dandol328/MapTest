@@ -28,10 +28,10 @@ struct ContentView: View {
             VStack {
                 // A button that writes to the environment settings
                 Button("Change Latitude") {
-                    mapViewFixedLocationInput.latitude = 3.5
+                    mapViewFixedLocationInput.latitude = 33.543
                 }
                 Button("Change Longitude") {
-                    mapViewFixedLocationInput.longitude = 6.9
+                    mapViewFixedLocationInput.longitude = -112.233
                 }
 
                 Text("Latitude: \(mapViewFixedLocationInput.latitude)")
