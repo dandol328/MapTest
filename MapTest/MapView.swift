@@ -10,7 +10,7 @@ import MapKit
 
 struct MapView: View {
     
-    @StateObject var locationManager = LocationManager()
+    @ObservedObject var locationManager = LocationManager()
     
     var body: some View {
         
