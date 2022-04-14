@@ -20,37 +20,18 @@ struct ContentView: View {
     @StateObject var mapViewFixedLocationInput = MapViewFixedLocationInput()
 
     var body: some View {
-        mapView.body
-            .onAppear() {
-                locationManager.checkIfLocationServicesIsEnabled()
-            }
-        NavigationView {
-            VStack {
-                // A button that writes to the environment settings
-                Button("Change Latitude") {
-                    mapViewFixedLocationInput.latitude = 33.543
-                }
-                Button("Change Longitude") {
-                    mapViewFixedLocationInput.longitude = -112.233
-                }
-
-                Text("Latitude: \(mapViewFixedLocationInput.latitude)")
-                
-                Text("Longitude: \(mapViewFixedLocationInput.longitude)")
-
-                NavigationLink(destination: MapViewFixed()) {
-                    Text("Show Detail View")
-                }
-                
-                Text(locationManager.latString)
-                Text(locationManager.longString)
-                    .onAppear() {
-                        locationManager.checkIfLocationServicesIsEnabled()
-                    }
-
-            }
+        VStack {
+            MapViewFixed()
         }
         .environmentObject(mapViewFixedLocationInput)
+        .onAppear() {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                mapViewFixedLocationInput.latitude = 33.54311
+                mapViewFixedLocationInput.longitude = -112.23399
+                mapViewFixedLocationInput.fixedRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: mapViewFixedLocationInput.latitude, longitude: mapViewFixedLocationInput.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+            }
+        }
+
     }
 }
 

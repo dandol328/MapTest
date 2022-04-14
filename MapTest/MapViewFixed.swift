@@ -7,7 +7,6 @@
 
 import SwiftUI
 import MapKit
-import Combine
 
 class MapViewFixedLocationInput: ObservableObject {
     @Published var latitude = 1.0
@@ -21,14 +20,20 @@ struct MapViewFixed: View {
         
     var body: some View {
         
-        Text("Latitude: \(mapViewFixedLocationInput.latitude)")
+        VStack {
+            Text("Latitude: \(mapViewFixedLocationInput.latitude)")
 
-        Map(coordinateRegion: $mapViewFixedLocationInput.fixedRegion, interactionModes: .all, showsUserLocation: false)
-            .ignoresSafeArea()
-            .accentColor(Color(.systemMint))
-            .onAppear {
-                mapViewFixedLocationInput.fixedRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: mapViewFixedLocationInput.latitude, longitude: mapViewFixedLocationInput.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-            }
+            Map(coordinateRegion: $mapViewFixedLocationInput.fixedRegion, interactionModes: .all, showsUserLocation: false)
+                .ignoresSafeArea()
+                .accentColor(Color(.systemMint))
+                .onAppear {
+                    print("I'm changing to the default location")
+                    mapViewFixedLocationInput.fixedRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: mapViewFixedLocationInput.latitude, longitude: mapViewFixedLocationInput.longitude), span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
+                }
+
+        }
+        .environmentObject(mapViewFixedLocationInput)
+        
 
     }
 
